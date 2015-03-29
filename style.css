@@ -1,0 +1,18 @@
+html {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background-color: #000;
+	display: table-cell;
+	margin: 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
+canvas {
+	border: 1px solid #fff;
+	cursor: none;
+}
