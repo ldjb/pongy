@@ -11,12 +11,9 @@ h1 {
 	margin: 1em 0 0;
 }
 
-#byline {
-	margin: 0 0 1em;
-}
-
 iframe {
 	border: 1px solid #fff;
+	margin: 1em 0;
 }
 
 h2, li {
