@@ -12,7 +12,6 @@ body {
 	vertical-align: middle;
 }
 
-canvas {
+iframe {
 	border: 1px solid #fff;
-	cursor: none;
 }
