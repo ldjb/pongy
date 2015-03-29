@@ -1,17 +1,32 @@
-html {
-	display: table;
-	height: 100%;
-	width: 100%;
-}
-
 body {
 	background-color: #000;
-	display: table-cell;
-	margin: 0;
+	color: #fff;
+	font-family: "Lucida Sans", "Lucida Grande", Helvetica, sans-serif;
 	text-align: center;
-	vertical-align: middle;
+	margin: auto;
+	max-width: 800px;
+}
+
+h1 {
+	margin: 1em 0 0;
+}
+
+#byline {
+	margin: 0 0 1em;
 }
 
 iframe {
 	border: 1px solid #fff;
+}
+
+h2, li {
+	text-align: left;
+}
+
+p {
+	text-align: justify;
+}
+
+a {
+	color: #ff0;
 }
