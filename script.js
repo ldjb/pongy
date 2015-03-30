@@ -208,6 +208,12 @@ function step(time) {
 	if (mouseOver) {
 		requestAnimationFrame(step);
 	}
+	else if (!flgGameOver) {
+		ctx.fillStyle = "#fff";
+		ctx.font = "32px Verdana";
+		ctx.textAlign = "center";
+		ctx.fillText("Paused", 640/2, 32);
+	}
 }
 
 $("#p").on("mouseenter", function() {
