@@ -143,8 +143,11 @@ function title() {
 	ctx.textAlign = "center";
 	ctx.font = "32px Verdana";
 	ctx.fillText("Pongy in the Middle", 640/2, 64);
+	ctx.fillText("v1.0.1", 640/2, 96);
 	ctx.fillText("a game by Leon Byford", 640/2, 128);
-	ctx.fillText("Click to start", 640/2, 192);
+	ctx.fillText("Click to start", 640/2, 256);
+	ctx.fillText("©2015 Leon Byford", 640/2, 416);
+	ctx.fillText("http://ldjb.uk/pongy", 640/2, 448);
 	
 	initVars();
 	flgGameOver = true;
