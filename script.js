@@ -143,8 +143,11 @@ function title() {
 	ctx.textAlign = "center";
 	ctx.font = "32px Verdana";
 	ctx.fillText("Pongy in the Middle", 640/2, 64);
+	ctx.fillText("v1.0.1", 640/2, 96);
 	ctx.fillText("a game by Leon Byford", 640/2, 128);
-	ctx.fillText("Click to start", 640/2, 192);
+	ctx.fillText("Click to start", 640/2, 256);
+	ctx.fillText("©2015 Leon Byford", 640/2, 416);
+	ctx.fillText("http://ldjb.uk/pongy", 640/2, 448);
 	
 	initVars();
 	flgGameOver = true;
@@ -155,14 +158,8 @@ function title() {
 function gameOver() {
 	flgGameOver = true;
 	$("canvas").css("cursor", "pointer");
-	ctx.fillStyle = "#000";
-	ctx.fillRect(0, 0, 640, 480);
 	ctx.fillStyle = "#fff";
 	ctx.font = "32px Verdana";
-	ctx.textAlign = "left";
-	ctx.fillText("Score: " + score, 0, 32);
-	ctx.textAlign = "right";
-	ctx.fillText("Top: " + topScore, 640, 32);
 	ctx.textAlign = "center";
 	ctx.fillText("Game Over", 640/2, 96);
 	ctx.fillText("Click to try again", 640/2, 160);
