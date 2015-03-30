@@ -259,12 +259,12 @@ $("body").on("keypress", function(e) {
 $(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange", function() {
 	var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
 	if (fullscreenElement) {
-		if ($("body").width() < $("body").height()) {
-			$("#p").width($("body").width());
+		if ($(window).width() < $(window).height()) {
+			$("#p").width($(window).width());
 			$("#p").height($("#p").width()/4*3);
 		}
 		else {
-			$("#p").height($("body").height());
+			$("#p").height($(window).height());
 			$("#p").width($("#p").height()/3*4);
 		}
 	}
