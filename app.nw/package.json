@@ -1,0 +1,11 @@
+{
+	"main": "index.html",
+	"name": "uk.ldjb.pongy",
+	"window": {
+		"title": "Pongy in the Middle",
+		"toolbar": false,
+		"width": 640,
+		"height": 480,
+		"resizable": false
+	}
+}
