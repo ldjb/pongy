@@ -173,10 +173,11 @@ function gameOver() {
 	flgGameOver = true;
 	$("canvas").css("cursor", "pointer");
 	ctx.fillStyle = "#fff";
-	ctx.font = "32px Verdana";
 	ctx.textAlign = "center";
-	ctx.fillText("Game Over", 640/2, 96);
-	ctx.fillText("Click to try again", 640/2, 160);
+	ctx.font = "32px Verdana";
+	ctx.fillText("Game Over", 640/2, 240);
+	ctx.font = "16px Verdana";
+	ctx.fillText("Click to try again", 640/2, 272);
 	
 	if (score == topScore) {
 		docCookies.setItem("topScore", score, Infinity);
