@@ -155,14 +155,8 @@ function title() {
 function gameOver() {
 	flgGameOver = true;
 	$("canvas").css("cursor", "pointer");
-	ctx.fillStyle = "#000";
-	ctx.fillRect(0, 0, 640, 480);
 	ctx.fillStyle = "#fff";
 	ctx.font = "32px Verdana";
-	ctx.textAlign = "left";
-	ctx.fillText("Score: " + score, 0, 32);
-	ctx.textAlign = "right";
-	ctx.fillText("Top: " + topScore, 640, 32);
 	ctx.textAlign = "center";
 	ctx.fillText("Game Over", 640/2, 96);
 	ctx.fillText("Click to try again", 640/2, 160);
