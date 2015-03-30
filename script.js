@@ -195,9 +195,9 @@ function step(time) {
 	
 		ctx.font = "32px Verdana";
 		ctx.textAlign = "left";
-		ctx.fillText("Score: " + score, 0, 32);
+		ctx.fillText("Score: " + score, padM, 32);
 		ctx.textAlign = "right";
-		ctx.fillText("Top: " + topScore, 640, 32);
+		ctx.fillText("Top: " + topScore, 640 - padM, 32);
 	
 		animateLPad();
 		animateRPad();
