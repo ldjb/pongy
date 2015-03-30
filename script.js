@@ -35,9 +35,9 @@ function getDocCookies(x) {
 
 function initVars() {
 	score = 0;
-	lPadY = (480-padH)/2;
+	lPadY = 32+(480-32-padH)/2;
 	lPadSpeed = 0;
-	rPadY = (480-padH)/2;
+	rPadY = 32+(480-32-padH)/2;
 	rPadSpeed = 0;
 	ballX = 640 - padM - padW - ballR;
 	ballLeft = true;
@@ -66,7 +66,7 @@ function bounceToLeft() {
 			topScore = score;
 		}
 		
-		var to = Math.round((480-padH)*Math.random());
+		var to = Math.round(32+(480-32-padH)*Math.random());
 		rPadSpeed = (to - rPadY) / framesUntilImpact();
 		lPadSpeed = 0;
 		ballSpeed++;
@@ -84,7 +84,7 @@ function bounceToRight() {
 			topScore = score;
 		}
 	
-		var to = Math.round((480-padH)*Math.random());
+		var to = Math.round(32+(480-32-padH)*Math.random());
 		lPadSpeed = (to - lPadY) / framesUntilImpact();
 		rPadSpeed = 0;
 		ballSpeed++;
@@ -109,8 +109,8 @@ function animateBall() {
 	if (mouseY > 480 - ballR) {
 		ballY = 480 - ballR;
 	}
-	else if (mouseY < ballR) {
-		ballY = ballR;
+	else if (mouseY < 32 + ballR) {
+		ballY = 32 + ballR;
 	}
 	else {
 		ballY = mouseY;
