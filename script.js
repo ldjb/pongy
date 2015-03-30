@@ -1,3 +1,5 @@
+var docCookies;
+
 var ctx;
 
 var maxFPS = 60;
@@ -26,6 +28,10 @@ var ballSpeed;
 var mouseY;
 
 var flgGameOver;
+
+function getDocCookies(x) {
+	docCookies = x;
+}
 
 function initVars() {
 	score = 0;
@@ -171,6 +177,10 @@ function gameOver() {
 	ctx.textAlign = "center";
 	ctx.fillText("Game Over", 640/2, 96);
 	ctx.fillText("Click to try again", 640/2, 160);
+	
+	if (score == topScore) {
+		docCookies.setItem("topScore", score, Infinity);
+	}
 }
 
 function step(time) {
@@ -274,7 +284,14 @@ $(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange MSFu
 	}
 });
 
+function cookiesInit() {
+	if (docCookies.hasItem("topScore")) {
+		topScore = docCookies.getItem("topScore");
+	}
+}
+
 $(document).ready(function() {
+	$.getScript("lib/cookies.js", cookiesInit);
 	ctx = $("#p")[0].getContext("2d");
 	title();
 });
