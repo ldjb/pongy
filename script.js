@@ -141,15 +141,20 @@ function framesUntilImpact() {
 function title() {
 	ctx.fillStyle = "#000";
 	ctx.fillRect(0, 0, 640, 480);
-	ctx.fillStyle = "#fff";
-	ctx.textAlign = "center";
-	ctx.font = "32px Verdana";
-	ctx.fillText("Pongy in the Middle", 640/2, 64);
-	ctx.fillText("v1.0.1", 640/2, 96);
-	ctx.fillText("a game by Leon Byford", 640/2, 128);
-	ctx.fillText("Click to start", 640/2, 256);
-	ctx.fillText("©2015 Leon Byford", 640/2, 416);
-	ctx.fillText("http://ldjb.uk/pongy", 640/2, 448);
+	
+	var logo = new Image();
+	logo.src = "img/logo.png";
+	$(logo).on("load", function() {
+		ctx.drawImage(logo, 57, 10);
+		ctx.fillStyle = "#fff";
+		ctx.textAlign = "center";
+		ctx.font = "16px Verdana";
+		ctx.fillText("v1.0.1", 640/2, 240);
+		ctx.fillText("©2015 Leon Byford", 640/2, 432);
+		ctx.fillText("http://ldjb.uk/pongy", 640/2, 464);
+		ctx.font = "32px Verdana";
+		ctx.fillText("Click to start", 640/2, 352);
+	});
 	
 	initVars();
 	flgGameOver = true;
