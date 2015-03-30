@@ -37,6 +37,7 @@ function initVars() {
 	ballLeft = true;
 	ballSpeed = 3;
 	flgGameOver = false;
+	$("canvas").css("cursor", "none");
 }
 
 function drawPad(right, y) {
@@ -147,11 +148,13 @@ function title() {
 	
 	initVars();
 	flgGameOver = true;
+	$("canvas").css("cursor", "pointer");
 }
 
 
 function gameOver() {
 	flgGameOver = true;
+	$("canvas").css("cursor", "pointer");
 	ctx.fillStyle = "#000";
 	ctx.fillRect(0, 0, 640, 480);
 	ctx.fillStyle = "#fff";
