@@ -149,8 +149,8 @@ function title() {
 		ctx.fillStyle = "#fff";
 		ctx.textAlign = "center";
 		ctx.font = "16px Verdana";
-		ctx.fillText("v1.0.1", 640/2, 240);
-		ctx.fillText("©2015 Leon Byford", 640/2, 432);
+		ctx.fillText("v1.0.2", 640/2, 240);
+		ctx.fillText("©2015 Visual Archives Limited / Leon Byford", 640/2, 432);
 		ctx.fillText("http://ldjb.uk/pongy", 640/2, 464);
 		ctx.font = "32px Verdana";
 		ctx.fillText("Click to start", 640/2, 352);
@@ -222,7 +222,7 @@ $("#p").on("click", function() {
 });
 
 $("body").on("keypress", function(e) {
-	if (e.key == "f") {
+	if (e.which == 70 || e.which == 102) {
 		var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
 		if (!fullscreenElement) {
 			var elem = $("body")[0];
