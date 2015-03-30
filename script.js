@@ -155,7 +155,7 @@ function title() {
 		ctx.fillStyle = "#fff";
 		ctx.textAlign = "center";
 		ctx.font = "16px Verdana";
-		ctx.fillText("v1.0.2", 640/2, 240);
+		ctx.fillText("v1.1.0", 640/2, 240);
 		ctx.fillText("©2015 Visual Archives Limited / Leon Byford", 640/2, 432);
 		ctx.fillText("http://ldjb.uk/pongy", 640/2, 464);
 		ctx.font = "32px Verdana";
