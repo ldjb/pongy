@@ -54,6 +54,7 @@ function drawPad(right, y) {
 
 function bounceToLeft() {
 	if (mouseY >= rPadY && mouseY <= rPadY+padH) {
+		$("#sfx-ping")[0].play();
 		score++;
 		if (score > topScore) {
 			topScore = score;
@@ -71,6 +72,7 @@ function bounceToLeft() {
 
 function bounceToRight() {
 	if (mouseY >= lPadY && mouseY <= lPadY+padH) {
+		$("#sfx-pong")[0].play();
 		score++;
 		if (score > topScore) {
 			topScore = score;
@@ -156,6 +158,7 @@ function title() {
 
 
 function gameOver() {
+	$("#sfx-lose")[0].play();
 	flgGameOver = true;
 	$("canvas").css("cursor", "pointer");
 	ctx.fillStyle = "#fff";
@@ -208,6 +211,7 @@ $("#p").on("mousemove", function(e) {
 
 $("#p").on("click", function() {
 	if (flgGameOver) {
+		$("#sfx-start")[0].play();
 		initVars();
 	}
 });
