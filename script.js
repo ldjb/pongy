@@ -25,9 +25,12 @@ var ballX;
 var ballLeft;
 var ballSpeed;
 
-var mouseY;
+var mouseY = 32+(480-32)/2;
 
 var flgGameOver;
+
+var touchId = null;
+var touchY;
 
 function getDocCookies(x) {
 	docCookies = x;
@@ -301,4 +304,42 @@ $(document).ready(function() {
 	$.getScript("lib/cookies.js", cookiesInit);
 	ctx = $("#p")[0].getContext("2d");
 	title();
+});
+
+$("#p").on("touchstart", function(e) {
+	e.preventDefault();
+	if (touchId == null) {
+		touchId = e.originalEvent.changedTouches[0].identifier;
+		touchY = e.originalEvent.changedTouches[0].screenY;
+	}
+});
+
+$("#p").on("touchmove", function(e) {
+	e.preventDefault();
+	var touches = $.grep(e.originalEvent.changedTouches, function(touch) {
+		return touch.identifier == touchId;
+	});
+	if (touches.length) {
+		mouseY += touches[0].screenY - touchY;
+		mouseY = Math.max(0, Math.min(480, mouseY));
+		touchY = touches[0].screenY;
+	}
+});
+
+$("#p").on("touchend", function(e) {
+	e.preventDefault();
+	
+	if (flgGameOver) {
+		$("#sfx-start")[0].play();
+		initVars();
+		mouseOver = true;
+		requestAnimationFrame(step);
+	}
+	
+	var touchMatch = $.grep(e.originalEvent.changedTouches, function(touch) {
+		return touch.identifier == touchId;
+	}).length;
+	if (touchMatch) {
+		touchId = null;
+	}
 });
